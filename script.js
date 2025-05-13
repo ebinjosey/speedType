@@ -9,6 +9,8 @@ function randomWord() {
 function newGame() {
     document.getElementById('words').innerHTML = '';
     for (let i = 0; i < 200; i++) {
-        
+        document.getElementById('words').innerHTML += randomWord();
     }
 }
+
+newGame()
