@@ -46,6 +46,30 @@ body {
     color: var(--textPrimary); 
   }
 
+/* GAME */  
+
+#header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#buttons {
+    text-align: right;
+}
+
+button {
+    background-color: var(--textSecondary);
+    border: 0;
+    color: var(--textPrimary);
+    padding: 5px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#info {
+    color: var(--primaryColor);
+}
+
 /* FOOTER */
 
 .site-footer {
