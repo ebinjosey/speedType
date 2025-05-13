@@ -12,3 +12,33 @@ body {
     background-color: var(--bgColor);
     color: var(--textPrimary)
 }
+
+.site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 10rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: #5662F6;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+.nav-link:hover {
+    color: var(--primary); 
+  }
