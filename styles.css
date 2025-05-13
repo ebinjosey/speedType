@@ -70,6 +70,12 @@ button {
     color: var(--primaryColor);
 }
 
+div.word {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0 5px;
+}
+
 /* FOOTER */
 
 .site-footer {
