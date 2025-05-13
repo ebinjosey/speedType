@@ -13,6 +13,8 @@ body {
     color: var(--textPrimary)
 }
 
+/* HEADER */
+
 .site-header {
     display: flex;
     flex-direction: column;
