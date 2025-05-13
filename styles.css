@@ -15,30 +15,50 @@ body {
 
 .site-header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem 10rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    gap: 1rem;
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 4rem;
     font-weight: bolder;
-    color: #5662F6;
+    color: var(--primaryColor);
 }
 
 .nav-links {
     display: flex;
-    justify-content: space-between;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .nav-link {
-    color: var(--black);
+    color: var(--textSecondary);
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 1.2rem;
   }
   
 .nav-link:hover {
-    color: var(--primary); 
+    color: var(--textPrimary); 
   }
+
+/* FOOTER */
+
+.site-footer {
+    display: flex;
+    justify-content: space-around;
+    color: #666;
+}
+
+.footer-link {
+    color: var(--textSecondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-link:hover {
+    color: var(--textPrimary);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
