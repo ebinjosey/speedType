@@ -10,7 +10,9 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bgColor);
-    color: var(--textPrimary)
+    color: var(--textPrimary);
+    font-size: 1.4rem;
+    line-height: 1.4;
 }
 
 /* HEADER */
@@ -80,6 +82,7 @@ div#game {
     line-height: 35px;
     height: 105px;
     overflow: hidden;
+    outline: none; 
 }
 
 #words {
@@ -87,15 +90,16 @@ div#game {
     color: var(--textSecondary);
 }
 
-game:focus #words {
+#game:focus #words {
     filter: blur(0);
 }
 
 #focus-error {
-    position: absolute;
-    inset: 0;
-    text-align: center;
-    padding-top: 35px;
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  padding-top: 35px;
+  pointer-events: none;
 }
 
 div.word {
@@ -112,19 +116,23 @@ div.word {
     color: #f55;
 }
 
-game:focus #focus-error {
+#game:focus #focus-error {
     display: none;
 }
 
 /* CURSOR */
 
 #cursor {
-    width: 2px;
-    height: 1.6rem;
-    background: var(--primaryColor);
-    position: fixed;
-    top: 265px;
-    left: 60px;
+  display: none;
+  width: 2px;
+  height: 1.6rem;
+  background: var(--primaryColor);
+  position: absolute;
+  animation: blink 0.3s infinite;
+}
+
+#game:focus #cursor {
+  display: block;
 }
 
 /* FOOTER */
