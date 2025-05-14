@@ -87,6 +87,10 @@ div.word {
     margin: 0 5px;
 }
 
+#words {
+    filter: blur(5px);
+}
+
 /* FOOTER */
 
 .site-footer {
