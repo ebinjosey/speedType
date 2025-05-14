@@ -116,6 +116,17 @@ game:focus #focus-error {
     display: none;
 }
 
+/* CURSOR */
+
+#cursor {
+    width: 2px;
+    height: 1.6rem;
+    background: var(--primaryColor);
+    position: fixed;
+    top: 265px;
+    left: 60px;
+}
+
 /* FOOTER */
 
 .site-footer {
