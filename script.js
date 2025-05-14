@@ -42,6 +42,10 @@ document.getElementById('game').addEventListener('keyup', ev => {
         addClass(currentLetter.nextSibling, 'current'); 
         }
     }
+
+    if (isSpace) {
+        
+    }
 })
 
 newGame()
