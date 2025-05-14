@@ -2,11 +2,11 @@ const words = `apple ball cat dog egg fish goat hat ice jam kite leaf milk nest 
 const wordsCount = words.length;
 
 function addClass(el, name) {
-    el.className += ' '+name;
+    el.className.add(name);
 }
 
 function removeClass(el, name) {
-    el.className = el.className.replace(name,'');
+    el.className.remove(name);
 }
 
 function randomWord() {
