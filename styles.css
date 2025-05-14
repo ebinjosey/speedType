@@ -104,6 +104,14 @@ div.word {
     margin: 0 5px;
 }
 
+.letter.colour {
+    color: #fff;
+}
+
+.letter.incorrect {
+    color: #f55;
+}
+
 game:focus #focus-error {
     display: none;
 }
