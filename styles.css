@@ -84,6 +84,7 @@ div#game {
 
 #words {
     filter: blur(5px);
+    color: var(--textSecondary);
 }
 
 game:focus #words {
@@ -101,6 +102,10 @@ div.word {
     display: inline-block;
     font-family: 'Roboto Mono', monospace;
     margin: 0 5px;
+}
+
+game:focus #focus-error {
+    display: none;
 }
 
 /* FOOTER */
