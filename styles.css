@@ -82,7 +82,10 @@ div#game {
     line-height: 35px;
     height: 105px;
     overflow: hidden;
-    outline: none; 
+}
+
+div#game:focus {
+    outline: 0;
 }
 
 #words {
@@ -108,7 +111,7 @@ div.word {
     margin: 0 5px;
 }
 
-.letter.colour {
+.letter.correct {
     color: #fff;
 }
 

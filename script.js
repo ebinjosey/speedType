@@ -2,16 +2,16 @@ const words = `apple ball cat dog egg fish goat hat ice jam kite leaf milk nest 
 const wordsCount = words.length;
 
 function addClass(el, name) {
-    el.className.add(name);
+    el.classList.add(name);
 }
 
 function removeClass(el, name) {
-    el.className.remove(name);
+    el.classList.remove(name);
 }
 
 function randomWord() {
     const randomIndex = Math.ceil(Math.random() * wordsCount);
-    return words[randomIndex]
+    return words[randomIndex - 1]
 }
 
 function formatWord(word) {
@@ -31,10 +31,15 @@ document.getElementById('game').addEventListener('keyup', ev => {
     const key = ev.key;
     const currentLetter = document.querySelector('.letter.current');
     const expected = currentLetter.innerHTML;
+    const isLetter = key.length === 1 && key !== ' ';
     
-    console.log()
-}
+    console.log({key, expected});
 
-)
+    if (isLetter) {
+        if (currentLetter) {
+        addClass(currentLetter, key === expected ? 'correct' : 'incorrect');    
+        }
+    }
+})
 
 newGame()
