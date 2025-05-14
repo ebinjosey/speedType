@@ -58,6 +58,10 @@ body {
     text-align: right;
 }
 
+main {
+    padding: 0 50px;
+}
+
 button {
     background-color: var(--textSecondary);
     border: 0;
