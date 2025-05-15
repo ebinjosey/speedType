@@ -34,7 +34,9 @@ document.getElementById('game').addEventListener('keyup', ev => {
     const expected = currentLetter?.innerHTML || ' ';
     const isLetter = key.length === 1 && key !== ' ';
     const isSpace = key === ' ';
-    
+    const isBackspace = key === 'Backspace';
+    const isFirstLetter = currentLetter === currentWord.firstChild;
+     
     console.log({key, expected});
 
     if (isLetter) {
@@ -67,12 +69,16 @@ document.getElementById('game').addEventListener('keyup', ev => {
         addClass(currentWord.nextSibling.firstChild, 'current');
     }
 
+    if (isBackspace) {
+
+    }
+
     const nextLetter = document.querySelector('.letter.current');
     const nextWord = document.querySelector('.word.current');
     const cursor = document.getElementById('cursor');
     cursor.style.top = (nextLetter || nextWord).getBoundingClientRect().top + 2 +'px';
     cursor.style.left = (nextLetter || nextWord).getBoundingClientRect()[nextLetter ? 'left' : 'right'] + 0.2 + 'px';
-
+0
 })
 
 newGame()
