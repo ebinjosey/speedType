@@ -164,6 +164,9 @@ document.getElementById('game').addEventListener('keyup', ev => {
 document.getElementById('newGameBtn').addEventListener('click', () => {
     gameOver();
     newGame();
+
+    const gameEl = document.getElementById('game');
+    gameEl.classList.remove('over');
 });
 
 newGame()
