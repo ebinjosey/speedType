@@ -30,6 +30,17 @@ function newGame() {
     addClass(document.querySelector('.letter'), 'current');
     document.getElementById('info').innerHTML = (gameTime / 1000) + '';
     window.timer = null;
+
+    const cursor = document.getElementById('cursor');
+    const firstLetter = document.querySelector('.letter.current');
+    if (firstLetter) {
+        const rect = firstLetter.getBoundingClientRect();
+        cursor.style.top = rect.top + 2 + 'px';
+        cursor.style.left = rect.left + 0.2 + 'px';
+        cursor.style.display = 'block';
+    } else {
+        cursor.style.display = 'none';
+    }
 }
 
 function getWpm() {
