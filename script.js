@@ -70,6 +70,10 @@ document.getElementById('game').addEventListener('keyup', ev => {
     }
 
     if (isBackspace) {
+        if (curentLetter && isFirstLetter) {
+            removeClass(currentWord, 'current');
+            addClass(currentWord.previousSibling, 'current');
+        }
 
     }
 
