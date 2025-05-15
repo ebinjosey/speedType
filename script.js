@@ -162,11 +162,21 @@ document.getElementById('game').addEventListener('keyup', ev => {
 })
 
 document.getElementById('newGameBtn').addEventListener('click', () => {
-    gameOver();
-    newGame();
+    clearInterval(window.timer);
+    window.timer = null;
+    window.gameStart = null;
 
     const gameEl = document.getElementById('game');
     gameEl.classList.remove('over');
+
+    const cursor = document.getElementById('cursor');
+    cursor.style.top = 'auto';
+    cursor.style.left = 'auto';
+    cursor.style.display = 'none';
+
+    gameEl.focus();
+
+    newGame();
 });
 
 newGame()
