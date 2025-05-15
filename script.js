@@ -2,6 +2,7 @@ const words = `apple ball cat dog egg fish goat hat ice jam kite leaf milk nest 
 const wordsCount = words.length;
 const gameTime = 30 * 1000;
 window.timer = null;
+window.gameStart = null;
 
 function addClass(el, name) {
     el.classList.add(name);
@@ -43,7 +44,14 @@ document.getElementById('game').addEventListener('keyup', ev => {
     console.log({key, expected});
 
     if (!window.timer && isLetter) {
-        window.timer = setInterval(() => {}, 1000);
+        window.timer = setInterval(() => {
+            if (!window.gameStart) {
+                window.gameStart = (new Date()).getTime();
+            }
+            const currentTime = (new Date()).getTime();
+            const msPassed = currentTime = window.gameStart;
+            
+        }, 1000);
 
     }
 
