@@ -92,10 +92,16 @@ document.getElementById('game').addEventListener('keyup', ev => {
         }
     }    
 
-    if (currentWord.getBoundingClientRect().top > 200) {
-        const words = document.getElementById('words');
-        const margin = parseInt(words.style.marginTop || '0px');
-        words.style.marginTop = margin - 5 + 'px';
+    // Scrolling
+
+    const game = document.getElementById('game');
+    const wordsContainer = document.getElementById('words');
+    const gameTop = game.getBoundingClientRect().top;
+    const wordTop = currentWord.getBoundingClientRect().top;
+
+    if (wordTop - gameTop > 70) {
+        const margin = parseFloat(wordsContainer.style.marginTop || '0');
+        wordsContainer.style.marginTop = (margin - 35) + 'px';
     }
 
     // Cursor Movement
