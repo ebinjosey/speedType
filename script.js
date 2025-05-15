@@ -31,10 +31,18 @@ function newGame() {
     window.timer = null;
 }
 
+function getWpm() {
+    const words = [...document.querySelectorAll('.word')];
+    const lastTypedWord = document.querySelector('.word.current');
+
+}
+
 function gameOver() {
     clearInterval(window.timer);
     addClass(document.getElementById('game'), 'over');
+    document.getElementById('info').innerHTML = `WPM: ${getWpm()}`;
 }
+
 
 document.getElementById('game').addEventListener('keyup', ev => {
     const key = ev.key;
