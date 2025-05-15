@@ -42,7 +42,7 @@ function getWpm() {
         const correctLetters = letters.filter(letter => letter.className.includes('correct'));
         return incorrectLetters.length === 0 && correctLetters.length === letters.length
     });
-    return correctWords.length;
+    return correctWords.length / gameTime * 60000;
 }
 
 function gameOver() {
