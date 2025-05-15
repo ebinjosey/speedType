@@ -66,6 +66,13 @@ document.getElementById('game').addEventListener('keyup', ev => {
         }
         addClass(currentWord.nextSibling.firstChild, 'current');
     }
+
+    const nextLetter = document.querySelector('.letter.current');
+    const cursor = document.getElementById('cursor');
+    if (nextLetter) {
+        cursor.style.top = nextLetter.getBoundingClientRect().top + 2 +'px';
+        cursor.style.left = nextLetter.getBoundingClientRect().left + 0.2 + 'px';
+    }
 })
 
 newGame()
