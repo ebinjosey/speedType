@@ -31,6 +31,11 @@ function newGame() {
     window.timer = null;
 }
 
+function gameOver() {
+    clearInterval(window.timer);
+    addClass(document.getElementById('game'), 'over');
+}
+
 document.getElementById('game').addEventListener('keyup', ev => {
     const key = ev.key;
     const currentWord = document.querySelector('.word.current');
@@ -40,6 +45,10 @@ document.getElementById('game').addEventListener('keyup', ev => {
     const isSpace = key === ' ';
     const isBackspace = key === 'Backspace';
     const isFirstLetter = currentLetter === currentWord.firstChild;
+
+    if (document.querySelector('#game.over')) {
+        return;
+    }
      
     console.log({key, expected});
 
@@ -49,10 +58,14 @@ document.getElementById('game').addEventListener('keyup', ev => {
                 window.gameStart = (new Date()).getTime();
             }
             const currentTime = (new Date()).getTime();
-            const msPassed = currentTime = window.gameStart;
-            
+            const msPassed = currentTime - window.gameStart;
+            const sPassed = Math.round(msPassed / 1000);
+            const sLeft = (gameTime / 1000) - sPassed;
+            if (sLeft <= 0) {
+                gameOver();
+            }
+            document.getElementById('info').innerHTML = sLeft + '';
         }, 1000);
-
     }
 
     if (isLetter) {
@@ -127,7 +140,7 @@ document.getElementById('game').addEventListener('keyup', ev => {
     const cursor = document.getElementById('cursor');
     cursor.style.top = (nextLetter || nextWord).getBoundingClientRect().top + 2 +'px';
     cursor.style.left = (nextLetter || nextWord).getBoundingClientRect()[nextLetter ? 'left' : 'right'] + 0.2 + 'px';
-0
+
 })
 
 newGame()
