@@ -42,6 +42,11 @@ document.getElementById('game').addEventListener('keyup', ev => {
      
     console.log({key, expected});
 
+    if (!window.timer && isLetter) {
+        window.timer = setInterval(() => {}, 1000);
+
+    }
+
     if (isLetter) {
         if (currentLetter) {
         addClass(currentLetter, key === expected ? 'correct' : 'incorrect');   
