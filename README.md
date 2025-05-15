@@ -18,6 +18,6 @@ SpeedType is a minimal, fast, and clean typing game built with vanilla JavaScrip
 
 ## 🔗 Live Demo
 
-👉 [Try the game here](https://speedtype-ej.netlify.app/)
+👉 You can see the project for yourself here: [Live Demo](https://speedtype-ej.netlify.app/)
 
 
