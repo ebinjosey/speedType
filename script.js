@@ -78,8 +78,17 @@ document.getElementById('game').addEventListener('keyup', ev => {
             removeClass(currentWord.previousSibling.lastChild, 'incorrect');
             removeClass(currentWord.previousSibling.lastChild, 'correct');
         }
-        if (currentLetter && isFirstLetter) {
-            
+        if (currentLetter && !isFirstLetter) {
+            removeClass(currentLetter, 'current');
+            addClass(currentLetter.previousSibling, 'current');
+            removeClass(currentLetter.previousSibling, 'incorrect');
+            removeClass(currentLetter.previousSibling, 'correct');
+        }
+
+        if (!currentLetter) {
+            addClass(currentWord.lastChild, 'current');
+            removeClass(currentWord.lastChild, 'incorrect');
+            removeClass(currentWord.lastChild, 'correct');
         }
 
     }
