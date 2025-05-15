@@ -90,8 +90,15 @@ document.getElementById('game').addEventListener('keyup', ev => {
             removeClass(currentWord.lastChild, 'incorrect');
             removeClass(currentWord.lastChild, 'correct');
         }
+    }    
 
+    if (currentWord.getBoundingClientRect().top > 200) {
+        const words = document.getElementById('words');
+        const margin = parseInt(words.style.marginTop || '0px');
+        words.style.marginTop = margin - 5 + 'px';
     }
+
+    // Cursor Movement
 
     const nextLetter = document.querySelector('.letter.current');
     const nextWord = document.querySelector('.word.current');
